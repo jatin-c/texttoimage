@@ -1,5 +1,3 @@
-from django.http import JsonResponse
-from django.views.decorators.http import require_http_methods
 from imagegenerator.tasks import generate_images
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.decorators import api_view, permission_classes

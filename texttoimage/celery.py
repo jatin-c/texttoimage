@@ -24,11 +24,12 @@ from celery import Celery
 from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'texttoimage.settings')
+# os.environ.setdefault("FORKED_BY_MULTIPROCESSING", "1")
 
 app = Celery('texttoimage')
 
 # Load task modules from all registered Django app configs.
-app.config_from_object(settings, namespace='CELERY')
+app.config_from_object("django.conf:settings", namespace='CELERY')
 app.autodiscover_tasks()
 
 @app.task(bind=True)

@@ -9,7 +9,7 @@ import requests
 import base64
 from django.conf import settings
 
-prompt = "A piano ninja"
+prompt = "A footballer kid"
 
 response = requests.post(
     "https://api.stability.ai/v1/generation/stable-diffusion-xl-1024-v1-0/text-to-image",

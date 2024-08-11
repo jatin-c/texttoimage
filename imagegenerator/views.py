@@ -9,6 +9,5 @@ def imagine(request):
     prompt = request.GET.get('prompt')
     if not prompt:
         return Response({'error': 'Prompt is required'}, status=400)
-
     generate_images.delay(prompt)
     return Response({'message': 'Your image is being generated'}, status=202)
